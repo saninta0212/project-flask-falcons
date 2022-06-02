@@ -66,15 +66,23 @@ body {
 .menu-guide {
     font-style: italic;
     font-size: 12px;
-    margin-top: 20px;
+    margin-top: 15px;
     display: block  ;
+    color: rgb(139, 139, 139);
 }
 
-/* Page content area */
-.page-content {
+/* HomePage specific styles */
+.page-content-home {
     padding: 10px 0;
     overflow-y: scroll;
     height: 50vh;
+}
+
+
+/* All pages */
+.page-content {
+    padding: 10px 0;
+    margin-bottom: 30px;
 }
 
 .page-container p {
