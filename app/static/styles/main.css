@@ -32,8 +32,51 @@ body {
     color: black;
 }
 
+
 .page-container {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+}
+
+/* Menu bar at home page */
+.menu-bar {
+    display: block;
+    text-align: center;
+}
+
+.menu-bar a {
+    color: black;
+}
+
+.menu-bar a:visited {
+    color: black;
+}
+
+.menu-bar ul {
+    margin: 0 auto;
+    padding: 0;
+}
+
+.menu-bar li {
+    display: inline;
+    margin: 15px;
+}
+
+.menu-guide {
+    font-style: italic;
+    font-size: 12px;
+    margin-top: 20px;
+    display: block  ;
+}
+
+/* Page content area */
+.page-content {
+    padding: 10px 0;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.page-container p {
+    font-size: 1.2rem;
 }

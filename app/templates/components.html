@@ -1,3 +1,7 @@
+<!-- The icons were taken from Bootstrap.
+    See Bootstrap documentation: https://icons.getbootstrap.com
+-->
+
 {% macro backHomeButton() -%}
 <a href="/" class="back-home-btn">
     <svg
@@ -31,4 +35,35 @@
         />
     </svg>
 </a>
+{%- endmacro %} {% macro menuBar() -%}
+<nav class="menu-bar">
+    <ul>
+        <li style="list-style-type: none">
+            <a href="/experience"
+                ><i class="bi bi-briefcase" style="font-size: 32px"></i
+            ></a>
+        </li>
+        <li style="list-style-type: none">
+            <a href="/education"
+                ><i class="bi bi-book" style="font-size: 32px"></i
+            ></a>
+        </li>
+        <li style="list-style-type: none">
+            <a href="/projects"
+                ><i class="bi bi-display" style="font-size: 32px"></i
+            ></a>
+        </li>
+        <li style="list-style-type: none">
+            <a href="/places"
+                ><i class="bi bi-geo-alt" style="font-size: 32px"></i
+            ></a>
+        </li>
+        <li style="list-style-type: none">
+            <a href="/hobbies"
+                ><i class="bi bi-controller" style="font-size: 32px"></i
+            ></a>
+        </li>
+    </ul>
+    <span class="menu-guide">Click the icons to navigate.</span>
+</nav>
 {%- endmacro %}

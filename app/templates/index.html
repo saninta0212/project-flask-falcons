@@ -21,18 +21,41 @@
 
         <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
         <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
+        />
         <title>{{ title }}</title>
     </head>
 
     <body>
-        <header class="nav-bar">
-            <div class="nav-content">{{ components.backHomeButton() }}</div>
-            <span>My portfolio</span>
+        <header class="nav-bar" style="justify-content: center">
+            <!-- Keep this header to mantain the space consistent in all pages -->
         </header>
 
         <div class="page-container">
             <h1>{{ title }}</h1>
-            <div class="page-content"></div>
+            <div class="page-content">
+                <p>
+                    Esse laborum aute magna nisi dolor sunt laborum ad cupidatat
+                    id. Et magna proident amet occaecat ea nisi aute et veniam
+                    exercitation consectetur dolore est nulla. Laborum in
+                    occaecat dolor qui tempor do ut officia ut labore pariatur
+                    eu occaecat. Dolor do duis eu reprehenderit dolore ullamco
+                    velit quis sint esse. Sint id officia veniam Lorem ad
+                    deserunt nisi adipisicing nisi in. Proident sint ea dolore
+                    sunt consequat sit sint aliquip ullamco dolor aliquip ea
+                    occaecat labore. Veniam Lorem duis occaecat sunt nulla
+                    proident pariatur et laborum laborum veniam in.
+                </p>
+                <p>
+                    Consectetur aliquip ut commodo cillum ipsum sint. Non
+                    proident laboris velit labore amet amet reprehenderit magna.
+                    Irure veniam cillum sunt exercitation sunt veniam ut minim.
+                    Laboris laborum elit officia consectetur minim sunt commodo.
+                </p>
+            </div>
+            {{ components.menuBar() }}
         </div>
     </body>
 </html>
