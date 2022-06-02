@@ -31,3 +31,8 @@ def places():
     return render_template('places.html', title="Places", url=os.getenv("URL"))
 
 
+@app.route('/projects')
+def projects():
+    return render_template('projects_and_skills.html', title="Projects & Skills", url=os.getenv("URL"))
+
+
