@@ -110,7 +110,7 @@ body {
 /* Work experience page */
 .job-item {
     display: flex;
-    width: 100%;
+    width: 90%;
     margin-bottom: 20px;
     border-left: 10px solid rgb(177, 255, 247);
     padding: 17px;
