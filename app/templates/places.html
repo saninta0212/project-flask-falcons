@@ -36,7 +36,19 @@
 
         <div class="page-container">
             <h1>{{ title }}</h1>
-            <div class="page-content"></div>
+            <div class="page-content">
+                <p>Check out the countries I've visited!</p>
+                <div class="country-tags-area">
+                    {% for country in countries %}
+                    <span class="country-tag">{{ country }}</span>
+                    {% endfor %}
+                </div>
+                <iframe
+                    src="https://www.google.com/maps/d/u/0/embed?mid=1-TAdsdcffMsWUrLisMgPoK6mG4NBMtQ&ehbc=2E312F"
+                    width="800"
+                    height="480"
+                ></iframe>
+            </div>
         </div>
     </body>
 </html>
