@@ -28,11 +28,12 @@ def education():
 
 @app.route('/places')
 def places():
-    return render_template('places.html', title="Places", url=os.getenv("URL"))
+    countries = ["Canada", "Bangladesh", "India", "Thailand",
+                 "Singapore", "Malaysia", "Hong Kong", "Dubai", "Saudi Arabia"]
+    countries.sort()
+    return render_template('places.html', title="Places", url=os.getenv("URL"), countries=countries)
 
 
 @app.route('/projects')
 def projects():
     return render_template('projects_and_skills.html', title="Projects & Skills", url=os.getenv("URL"))
-
-

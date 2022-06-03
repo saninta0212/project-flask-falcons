@@ -88,3 +88,21 @@ body {
 .page-container p {
     font-size: 1.2rem;
 }
+
+/* Places page */
+.country-tag {
+    border-radius: 10px;
+    background-color: rgb(196, 255, 235);
+    padding: 7px 13px;
+    font-size: 1.2rem;
+    margin-right: 10px;
+    height: 1.23rem;
+    display: inline;
+    min-width: fit-content;
+}
+
+.country-tags-area {
+    margin: 20px 0;
+    display: flex;
+    overflow-x: scroll;
+}
