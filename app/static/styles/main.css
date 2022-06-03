@@ -106,3 +106,41 @@ body {
     display: flex;
     overflow-x: scroll;
 }
+
+/* Work experience page */
+.job-item {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    border-left: 10px solid rgb(177, 255, 247);
+    padding: 17px;
+    background-color: white;
+    border-radius: 7px;
+}
+
+.job-item-info {
+    width: 90%;
+}
+
+.job-item-info h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+.job-organization {
+    display: block;
+}
+
+.job-date {
+    display: block;
+    font-style: italic;
+}
+
+.job-item-logo {
+    width: 10%;
+    text-align: right;
+}
+
+.job-item-img {
+    width: 70px;
+}
