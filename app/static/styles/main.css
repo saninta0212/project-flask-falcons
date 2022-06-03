@@ -3,9 +3,9 @@ p, h1, h2, h3, h4, h5, h6, button {
 }
 
 body {
-    background-color: #DEF0FF;
+    background-color: #C9FBA8;
     background-size: cover;
-    width: auto; 
+    width: auto;
     overflow-x: hidden;
     font-family: "Roboto", serif;
     margin: 0px;
