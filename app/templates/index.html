@@ -2,57 +2,62 @@
 
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8"/>
+    <meta
             name="viewport"
             content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta property="og:title" content="Personal Portfolio" />
-        <meta property="og:description" content="My Personal Portfolio" />
-        <meta property="og:url" content="{{ url }}" />
+    />
+    <meta property="og:title" content="Personal Portfolio"/>
+    <meta property="og:description" content="My Personal Portfolio"/>
+    <meta property="og:url" content="{{ url }}"/>
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
+    <link rel="preconnect" href="https://fonts.gstatic.com"/>
+    <link
             href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
             rel="stylesheet"
-        />
+    />
 
-        <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
-        <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
-        <link
+    <link lang="sass" rel="stylesheet" href="./static/styles/main.css"/>
+    <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon"/>
+    <link
             rel="stylesheet"
             href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-        />
-        <title>{{ title }} </title>
-    </head>
+    />
+    <title>{{ title }} </title>
+</head>
 
-    <body>
-        <header class="nav-bar" style="justify-content: center">
-            <!-- Keep this header to mantain the space consistent in all pages -->
-        </header>
+<body>
+<header class="nav-bar" style="justify-content: center">
+    <!-- Keep this header to mantain the space consistent in all pages -->
+</header>
 
-        <div class="page-container">
+<div class="page-container">
 
-            <h1>{{ title }}</h1>
+    <p>Sambina Islam Aninta</p>
+    <h1>{{ title }}</h1>
 
-                <img src= "../../static/About.jpg" width = "80%" height = "400" alt="image2" class="center">
+    <div class="sambina-home-img">
+        <img src="../../static/About.jpg" alt="Sambina">
+    </div>
 
-                <p>
-                    Hello! I am Sambina and I am doing a Combined Computer Science and Biology Honours at the University
-                    of British Columbia. I love learning about Healthcare Technology and clinical Bioinformatics and I
-                    am passionate about STEM education for girls coming from FGLI (First-Generation Low-Income)
-                    backgrounds. You can learn more about my club, UBC STEM Fellowship and the events we organize to
-                    support STEM students from all backgrounds!
 
-                    When I am not busy coding or working in the lab with my beautiful RNA babies,
-                    I love hiking and exploring the street and beaches of beautiful British Columbia. Check out projects
-                    and my experiences below and you can contact me if you are interested to learn more about any of my
-                    projects or go on a walk with me <3
-                </p>
+    <p>
+        Hello! I am Sambina and I am doing a Combined Computer Science and Biology Honours at the University
+        of British Columbia. I love learning about Healthcare Technology and clinical Bioinformatics and I
+        am passionate about STEM education for girls coming from FGLI (First-Generation Low-Income)
+        backgrounds. You can learn more about my club, UBC STEM Fellowship and the events we organize to
+        support STEM students from all backgrounds!
+    </p>
+    <p style="margin-bottom: 28px">
+        When I am not busy coding or working in the lab with my beautiful RNA babies,
+        I love hiking and exploring the street and beaches of beautiful British Columbia. Check out projects
+        and my experiences below and you can contact me if you are interested to learn more about any of my
+        projects or go on a walk with me <3
+    </p>
 
-            {{ components.menuBar() }}
-        </div>
-    </body>
+    {{ components.menuBar() }}
+</div>
+</body>
 </html>
