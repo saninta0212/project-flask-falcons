@@ -1,80 +1,52 @@
 {% import 'components.html' as components %}
 
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!-- Required meta tags -->
-        <meta charset="utf-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, initial-scale=1, shrink-to-fit=no"
-        />
-        <meta property="og:title" content="Personal Portfolio" />
-        <meta property="og:description" content="My Personal Portfolio" />
-        <meta property="og:url" content="{{ url }}" />
+{% extends 'base.html' %}
 
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link
-            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-            rel="stylesheet"
-        />
+{% block header %}
+    {{ components.backHomeButton() }}
+    <span>Sambina Islam Aninta</span>
+{% endblock %}
 
-        <link lang="sass" rel="stylesheet" href="./static/styles/main.css" />
-        <link rel="icon" href="./static/img/favicon.ico" type="image/x-icon" />
-        <link
-            rel="stylesheet"
-            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css"
-        />
-        <title>{{ title }}</title>
-    </head>
+{% block title %}
+    {{ Title }}
+{% endblock %}
 
-    <body>
-        <header class="nav-bar" style="justify-content: space-between">
-            {{ components.backHomeButton() }}
-            <span>Sambina Islam Aninta</span>
-        </header>
+{% block content %}
 
-        <div class="page-container">
-            <h1>{{ title }}</h1>
-            <div class="page-content">
-                <img src = "../../static/img/logo.png" width = "80" height = "100">
-                <h2>Bachelor of Science, The University of British Columbia</h2>
-                <h3> August 2018-Present (Expected graduation: 2023) </h3>
-                <h4>SPECIALIZATION</h4>
-                <p>
-                    <li> Combined Honours in Biology and Computer Science </li>
-                    <li>Science Scholar (2019, 2021) & Dean's Honour List (2019, 2020, 2021)</li>
-                    <li> Completed third year with a 89.1% Cumulative GPA </li>
-                </p>
+    <h1>{{ title }}</h1>
+    <img src="../../static/img/logo.png" width="80" height="100" alt="UBC Logo">
+    <h2>Bachelor of Science, The University of British Columbia</h2>
+    <h3> August 2018-Present (Expected graduation: 2023) </h3>
+    <h4>SPECIALIZATION</h4>
+    <ul>
+        <li> Combined Honours in Biology and Computer Science</li>
+        <li>Science Scholar (2019, 2021) & Dean's Honour List (2019, 2020, 2021)</li>
+        <li> Completed third year with a 89.1% Cumulative GPA</li>
+    </ul>
 
 
-                <h4> AWARDS </h4>
-                <p>
-                    <li>
-                        Karen McKellin International Leader of Tomorrow (KMILOT) Award (Awarded to 34 incoming
-                        international students annually)
-                    </li>
+    <h4> AWARDS </h4>
+    <ul>
+        <li>
+            Karen McKellin International Leader of Tomorrow (KMILOT) Award (Awarded to 34 incoming
+            international students annually)
+        </li>
 
-                    <li>
-                        Department of Computer Science Scholarship to attend Virtual Grace Hopper Celebration (vGHC) 2021
-                    </li>
+        <li>
+            Department of Computer Science Scholarship to attend Virtual Grace Hopper Celebration (vGHC) 2021
+        </li>
 
-                    <li>
-                       Clayton Person Memorial Scholarship in Biology for receiving highest standing in BIOL 234/335 (Genetics)
-                    </li>
+        <li>
+            Clayton Person Memorial Scholarship in Biology for receiving highest standing in BIOL 234/335 (Genetics)
+        </li>
 
-                    <li>
-                       Faculty of Science International Student Scholarship in 2020W for demonstrating strong academic
-                        achievement and engagement in the Faculty
-                    </li>
-                    <li>
-                        Trek and J. Fred Muir scholarship for being in top 5% of the Faculty in 2019
-                    </li>
-                </p>
+        <li>
+            Faculty of Science International Student Scholarship in 2020W for demonstrating strong academic
+            achievement and engagement in the Faculty
+        </li>
+        <li>
+            Trek and J. Fred Muir scholarship for being in top 5% of the Faculty in 2019
+        </li>
+    </ul>
 
-
-            </div>
-        </div>
-
-    </body>
-</html>
+{% endblock %}
