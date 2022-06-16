@@ -8,6 +8,6 @@ pip install -r requirements.txt
 tmux -d new -s $1
 cd app
 export FLASK_ENV=development
-flask run
+flask run --host=0.0.0.0
 
 
