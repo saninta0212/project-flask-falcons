@@ -20,25 +20,11 @@ pip install -r requirements.txt
 
 ## Usage
 
-Create a .env file using the example.env template (make a copy using the variables inside of the template)
-
-Start flask development server
-```bash
-$ export FLASK_ENV=development
-$ flask run
+Run the automated deployment script with a name for tmux session
 ```
-
-You should get a response like this in the terminal:
+EXAMPLE:
+./redeploy-site.sh flask-falcon
 ```
-❯ flask run
- * Environment: development
- * Debug mode: on
- * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
-```
-
-You'll now be able to access the website at `localhost:5000` or `127.0.0.1:5000` in the browser! 
-
-*Note: The portfolio site will only work on your local machine while you have it running inside of your terminal. We'll go through how to host it in the cloud in the next few weeks!* 
 
 ## Contributing
 
