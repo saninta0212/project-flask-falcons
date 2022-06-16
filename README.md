@@ -4,7 +4,7 @@ Welcome to our portfolio site! This site is intended to be used as a tamplate by
 
 ## Installation
 
-Make sure you have python3 and pip installed
+Make sure you have python3 and pip installed!
 
 Create and activate virtual environment using virtualenv
 ```bash
