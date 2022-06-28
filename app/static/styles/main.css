@@ -174,3 +174,32 @@ body {
 .job-item-img {
     width: 70px;
 }
+
+/* Timeline page */
+
+.input {
+    display: block;
+    margin-top: 10%;
+    margin-bottom: 5%;
+    text-align: center;
+
+}
+
+.submit {
+    margin-top: 5%;
+    margin-bottom: 10%;
+    text-align: center;
+}
+
+.post-item {
+    display: flex;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 17px;
+    background-color: #D4F1F4;
+    border-radius: 7px;
+}
+
+.post-item-info h6{
+    font-style: italic;
+}

@@ -1,0 +1,71 @@
+{% import 'components.html' as components %}
+
+{% extends 'base.html' %}
+
+{% block header %}
+    {{ components.backHomeButton() }}
+    <span>Sambina Islam Aninta</span>
+{% endblock %}
+
+{% block title %}
+    Timeline of Activities and Experience
+{% endblock %}
+
+{% block content %}
+<h2> Timeline of Activities and Experience </h2>
+<div class="input" >
+    <form id="form">
+
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text">
+        <label for="email">Email</label>
+        <input id = "email" name="email" type="text">
+        <label for="content">Content </label>
+        <input id="content" name="content" type="text">
+        <button class = "submit" type="submit">Submit</button>
+    </form>
+</div>
+
+<!---->
+{% macro timeline_post(post) -%}
+<div class="post-item">
+    <div class="post-item-info">
+        <h2>{{ post.name }}</h2>
+        <h6> {{ post.email }} </h6>
+        <p> {{ post.content }} </p>
+    </div>
+</div>
+{%- endmacro %}
+
+
+{% for post in content %} {{ timeline_post(post) }} {% endfor %}
+
+{{ components.menuBar() }}
+
+<script>
+    /* Sending the formData object as payload using Fetch */
+
+    const form = document.getElementById('form');
+
+    form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const payload = new FormData(form);
+    console.log(payload.entries());
+
+    fetch('/api/timeline_post', {
+    method: 'POST',
+    body: payload,
+    })
+    .then(res => res.json()
+    )
+    .then(data => console.log(data))})
+
+</script>
+
+<script>
+    /* display the database entries*/
+
+
+</script>
+{% endblock %}
+
