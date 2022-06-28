@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
+ 
 
-  
-curl -X  POST http://localhost:5000/api/timeline_post -d 'name=Sam&email=sambina@gmail.com&content=Checking endpoints'  
+# deletes 60 posts 
+for i in {1..65}; do curl -X DELETE http://localhost:5000/api/timeline_post -d "id=$i"; done;
 
-curl http://localhost:5000/api/timeline_post 
+curl -X  POST http://localhost:5000/api/timeline_post -d 'name=Sam&email=sambina@gmail.com&content=Checking endpoints'
 
-curl -X DELETE http://localhost:5000/api/timeline_post -d "id=$POST_ID"
-
+curl http://localhost:5000/api/timeline_post
