@@ -1,8 +1,10 @@
 import os
+import re
 from flask import Flask, render_template, request
 from dotenv import load_dotenv
 import json
 from playhouse.shortcuts import model_to_dict
+from werkzeug import exceptions
 
 from app.mydb import TimelinePost
 
@@ -49,10 +51,39 @@ def projects():
 
 @app.route('/api/timeline_post', methods=['POST'])
 def post_time_line_post():
-    name = request.form["name"]
-    email = request.form["email"]
-    content = request.form["content"]
+    email_regex = re.compile(r"([A-Za-z0-9]+[--.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+")
+
+    key = ""
+    try:
+        key = "name"
+        name = request.form[key]
+        if len(name) == 0:
+            raise exceptions.BadRequestKeyError(key)
+
+        key = "email"
+        email = request.form[key]
+        is_email_valid = re.fullmatch(email_regex, email)
+        if len(email) == 0 or not is_email_valid:
+            raise exceptions.BadRequestKeyError(key)
+
+        key = "content"
+        content = request.form[key]
+        if len(content) == 0:
+            raise exceptions.BadRequestKeyError(key)
+
+    except exceptions.BadRequestKeyError:
+        """
+        BadRequestKeyError is raised by default when the body doesn't contain any of name, email or content.
+        Additionally, these statements:
+            if len(name) == 0: ...
+            if len(email) == 0 or not is_email_valid: ...
+            if len(content) == 0: ...
+        also raise BadRequestKeyError if some other conditions aren't fulfilled
+        """
+        return f"Invalid {key}", 400
+
     time_line_post = TimelinePost.create(name=name, email=email, content=content)
+
     return model_to_dict(time_line_post)
 
 
