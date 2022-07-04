@@ -50,8 +50,8 @@ class AppTestCase(unittest.TestCase):
             "content": "Hello world, I'm John!",
         })
         assert response.status_code == 400
-        html = response.get_data(as_text=True)
-        assert "Invalid name" in html
+        res_message = response.get_data(as_text=True)
+        assert "Invalid name" in res_message
 
         # POST request with empty content
         response = self.client.post("/api/timeline_post", data={
@@ -60,8 +60,8 @@ class AppTestCase(unittest.TestCase):
             "name": "John Doe"
         })
         assert response.status_code == 400
-        html = response.get_data(as_text=True)
-        assert "Invalid content" in html
+        res_message = response.get_data(as_text=True)
+        assert "Invalid content" in res_message
 
         # POST request with malformed email
         response = self.client.post("/api/timeline_post", data={
@@ -70,5 +70,5 @@ class AppTestCase(unittest.TestCase):
             "name": "John Doe"
         })
         assert response.status_code == 400
-        html = response.get_data(as_text=True)
-        assert "Invalid email" in html
+        res_message = response.get_data(as_text=True)
+        assert "Invalid email" in res_message
