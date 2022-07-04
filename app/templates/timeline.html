@@ -12,60 +12,78 @@
 {% endblock %}
 
 {% block content %}
-<h2> Timeline of Activities and Experience </h2>
-<div class="input" >
-    <form id="form">
+    <h2> Timeline of Activities and Experience </h2>
+    <div class="input">
+        <form id="form">
 
-        <label for="name">Name</label>
-        <input id="name" name="name" type="text">
-        <label for="email">Email</label>
-        <input id = "email" name="email" type="text">
-        <label for="content">Content </label>
-        <input id="content" name="content" type="text">
-        <button class = "submit" type="submit">Submit</button>
-    </form>
-</div>
-
-<!---->
-{% macro timeline_post(post) -%}
-<div class="post-item">
-    <div class="post-item-info">
-        <h2>{{ post.name }}</h2>
-        <h6> {{ post.email }} </h6>
-        <p> {{ post.content }} </p>
+            <label for="name">Name</label>
+            <input id="name" name="name" type="text" required>
+            <label for="email">Email</label>
+            <input id="email" name="email" type="text" required>
+            <label for="content">Content </label>
+            <input id="content" name="content" type="text" required>
+            <button class="submit" type="submit">Submit</button>
+            <span id="invalid-email-alert" style="display: none; color: #7c0000">Invalid email</span>
+        </form>
     </div>
-</div>
-{%- endmacro %}
+
+    <!---->
+    {% macro timeline_post(post) -%}
+        <div class="post-item">
+            <div class="post-item-info">
+                <h2>{{ post.name }}</h2>
+                <h6> {{ post.email }} </h6>
+                <p> {{ post.content }} </p>
+            </div>
+        </div>
+    {%- endmacro %}
 
 
-{% for post in content %} {{ timeline_post(post) }} {% endfor %}
+    {% for post in content %} {{ timeline_post(post) }} {% endfor %}
 
-{{ components.menuBar() }}
+    {{ components.menuBar() }}
 
-<script>
-    /* Sending the formData object as payload using Fetch */
+    <script>
+        /* Sending the formData object as payload using Fetch */
 
-    const form = document.getElementById('form');
+        const form = document.getElementById('form');
 
-    form.addEventListener('submit', function(e) {
-        // Prevent default behavior:
-        e.preventDefault();
-        // Create payload as new FormData object:
-        const payload = new FormData(form);
-        // Post the payload using Fetch:
-        fetch('/api/timeline_post', {
-        method: 'POST',
-        body: payload,
+        form.addEventListener('submit', function (e) {
+            // Prevent default behavior:
+            e.preventDefault();
+
+            // Create payload as new FormData object:
+            const payload = new FormData(form);
+            // Post the payload using Fetch:
+            fetch('/api/timeline_post', {
+                method: 'POST',
+                body: payload,
+            })
+                .then(res => {
+                    if (!res.ok) {
+                        return res.text().then(text => {
+                            throw new Error(text)
+                        })
+                    } else {
+                        return res.json()
+                    }
+                })
+                .then(data => {
+                    console.log(data)
+                    window.location.reload()
+                })
+                .catch(error => {
+                    console.log(error)
+                    if (error.message.includes("Invalid email")) {
+                        document.getElementById("invalid-email-alert").style.display = "block";
+                    } else {
+                        alert(error)
+                    }
+                })
         })
-        .then(res => res.json())
-        .then(data => console.log(data))
-        .catch(error => console.log('error', error))
-        .finally(function () {
-                window.location.reload()});
-    })
 
 
-</script>
+    </script>
 
 
 {% endblock %}
