@@ -2,10 +2,11 @@ server {
   listen 80;
   server_name http://sambina-aninta.duckdns.org;
 
-  if ($host = http://sambina-aninta.duckdns.org) {
+  if ($host = pe-week1-demo.duckdns.org) {
     return 301 https://$host$request_url;
 
-}}
+}
+}
 
 server {
   listen 443 ssl;
