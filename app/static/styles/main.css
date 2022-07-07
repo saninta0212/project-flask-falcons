@@ -138,9 +138,8 @@ body {
     display: flex;
     width: 90%;
     margin-bottom: 20px;
-    border-left: 10px solid rgb(177, 255, 247);
     padding: 17px;
-    background-color: white;
+    background-color: #D4F1F4;
     border-radius: 7px;
 }
 
