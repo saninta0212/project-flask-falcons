@@ -87,7 +87,7 @@ body {
     height: 500px;
     overflow: scroll;
     align-items: center;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .sambina-home-img img {
@@ -183,6 +183,10 @@ body {
     overflow: scroll;
     align-items: center;
     border-radius: 10px;
+}
+
+.hiking-img img {
+    max-width: 100%;
 }
 
 .painting-img {
