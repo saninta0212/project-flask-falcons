@@ -84,8 +84,8 @@ body {
 .sambina-home-img {
     display: flex;
     width: 100%;
-    height: 250px;
-    overflow: hidden;
+    height: 5000px;
+    overflow: scroll;
     align-items: center;
     border-radius: 10px;
 }
@@ -172,6 +172,26 @@ body {
 
 .job-item-img {
     width: 70px;
+}
+
+/* Hobbies */
+
+.hiking-img {
+    display: flex;
+    width: 100%;
+    height: 5000px;
+    overflow: scroll;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.painting-img {
+    display: flex;
+    width: 100%;
+    height: 5000px;
+    overflow: scroll;
+    align-items: center;
+    border-radius: 10px;
 }
 
 /* Timeline page */
